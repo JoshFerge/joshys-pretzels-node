@@ -15,7 +15,7 @@ Sentry.init({
 
 const transaction = Sentry.startTransaction({
   op: "test",
-  name: "tomorrow evnet",
+  name: "new event",
 });
 // setTimeout(() => {
 //   try {
@@ -49,9 +49,20 @@ const transaction = Sentry.startTransaction({
 //   }, 99);
 
 
+// setTimeout(() => {
+//     try {
+//       aaaaaaaa();
+//     } catch (e) {
+//       Sentry.captureException(e);
+//     } finally {
+//       transaction.finish();
+//     }
+//   }, 99);
+
+
 setTimeout(() => {
     try {
-      aaaaaaaa();
+      newerror();
     } catch (e) {
       Sentry.captureException(e);
     } finally {

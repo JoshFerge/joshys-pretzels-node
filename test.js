@@ -16,7 +16,7 @@ Sentry.init({
 
 const transaction = Sentry.startTransaction({
   op: "test",
-  name: "My First Test Transaction",
+  name: "another transaction",
 });
 setTimeout(() => {
   try {
@@ -24,7 +24,16 @@ setTimeout(() => {
   } catch (e) {
     Sentry.captureException(e);
   } finally {
-    transaction.finish();
     console.log('hay')
   }
 }, 99);
+
+setTimeout(() => {
+    try {
+      zzzzz();
+    } catch (e) {
+      Sentry.captureException(e);
+    } finally {
+      transaction.finish();
+    }
+  }, 99);

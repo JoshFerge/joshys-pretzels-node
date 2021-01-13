@@ -18,8 +18,6 @@ const transaction = Sentry.startTransaction({
   op: "test",
   name: "My First Test Transaction",
 });
-
-
 setTimeout(() => {
   try {
     foo();

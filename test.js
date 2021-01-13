@@ -7,7 +7,7 @@ const Tracing = require("@sentry/tracing");
 // import * as Tracing from '@sentry/tracing';
 Sentry.init({
   dsn: "https://f20e48638e134b649bf67de1f91df83f@o504099.ingest.sentry.io/5591628",
-  release: "nodejs@" + process.env.VERSION,
+  release: process.env.VERSION,
   // We recommend adjusting this value in production, or using tracesSampler
   // for finer control
   tracesSampleRate: 1.0,
@@ -15,7 +15,7 @@ Sentry.init({
 
 const transaction = Sentry.startTransaction({
   op: "test",
-  name: "new event",
+  name: "new event3",
 });
 // setTimeout(() => {
 //   try {
@@ -60,9 +60,21 @@ const transaction = Sentry.startTransaction({
 //   }, 99);
 
 
+// setTimeout(() => {
+//     try {
+//       newerror();
+//     } catch (e) {
+//       Sentry.captureException(e);
+//     } finally {
+//       transaction.finish();
+//     }
+//   }, 99);
+
+
+
 setTimeout(() => {
     try {
-      newerror();
+      babaeefawefawef();
     } catch (e) {
       Sentry.captureException(e);
     } finally {

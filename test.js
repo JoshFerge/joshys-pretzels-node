@@ -16,21 +16,32 @@ Sentry.init({
 
 const transaction = Sentry.startTransaction({
   op: "test",
-  name: "another transaction",
+  name: "another day another transaction",
 });
-setTimeout(() => {
-  try {
-    foo();
-  } catch (e) {
-    Sentry.captureException(e);
-  } finally {
-    console.log('hay')
-  }
-}, 99);
+// setTimeout(() => {
+//   try {
+//     foo();
+//   } catch (e) {
+//     Sentry.captureException(e);
+//   } finally {
+//     console.log('hay')
+//   }
+// }, 99);
 
-setTimeout(() => {
+// setTimeout(() => {
+//     try {
+//       zzzzz();
+//     } catch (e) {
+//       Sentry.captureException(e);
+//     } finally {
+//       transaction.finish();
+//     }
+//   }, 99);
+
+
+  setTimeout(() => {
     try {
-      zzzzz();
+      barrr();
     } catch (e) {
       Sentry.captureException(e);
     } finally {
